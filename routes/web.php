@@ -5,6 +5,7 @@ use App\Http\Controllers\
 {
     AuthController,
     DashboardController,
+    BarangController,
 };
 
 Route::get('/', function () {
@@ -17,3 +18,5 @@ Route::post('/postlogin', [AuthController::class, 'postlogin'])->name('postlogin
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::resource('/barang', BarangController::class);
